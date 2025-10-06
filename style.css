@@ -1,6 +1,4 @@
 /* ================== Shared Styles ================== */
-
-/* Body and general text */
 body {
   font-family: system-ui, Arial, sans-serif;
   margin: 0;
@@ -33,31 +31,31 @@ ul {
 /* ----------- Logo Section ----------- */
 .logo-container {
   display: flex;
+  flex-direction: column; /* stack logo above text */
   align-items: center;
-  gap: 14px;
+  gap: 10px; /* space between logo and text */
 }
 
 .logo-img {
-  height: 100px;       /* increased for visibility */
+  height: 140px;
   width: auto;
   object-fit: contain;
 }
 
 .logo-text {
-  font-size: 2rem;     /* larger to match the logo */
+  font-size: 2rem;
   font-weight: 700;
   color: #00aaff;
-  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 /* ----------- Nav Links ----------- */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .nav-links li {
-  margin-left: 1.5rem;
   display: inline-block;
 }
 
@@ -70,14 +68,13 @@ ul {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
   }
 
   .nav-links {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     margin-top: 1rem;
   }
@@ -92,6 +89,7 @@ ul {
     width: 100%;
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
+    text-align: center;
   }
 
   .nav-links a:last-child {
@@ -99,7 +97,7 @@ ul {
   }
 
   .logo-img {
-    height: 48px; /* slightly smaller on phones */
+    height: 80px;
   }
 
   .logo-text {
@@ -125,6 +123,7 @@ ul {
 /* ================== Hero Section ================== */
 .hero, .about-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -133,7 +132,7 @@ ul {
 }
 
 .hero-content, .about-text {
-  flex: 1;
+  flex: 1 1 300px;
 }
 
 .hero-content h2, .about-text h2 {
@@ -146,19 +145,9 @@ ul {
   margin-bottom: 1rem;
 }
 
-.about-text ul {
-  margin: 1.5rem 0;
-  padding-left: 1.2rem;
-}
-
-.about-text ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
 /* ================== Hero Image ================== */
 .hero-image-wrap, .image-container {
-  flex: 1;
+  flex: 1 1 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,6 +162,18 @@ ul {
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   object-fit: cover;
+}
+
+/* ================== Welcome Section ================== */
+main.section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+main.section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-indent: 2rem; /* adds first-line indent */
 }
 
 /* ================== Services ================== */
